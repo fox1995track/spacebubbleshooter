@@ -44,7 +44,7 @@
             const loadingCover = document.querySelector("#loading-cover");
             const progressBarEmpty = document.querySelector("#unity-progress-bar-empty");
             const progressBarFull = document.querySelector("#unity-progress-bar-full");
-            // const fullscreenButton = document.querySelector("#unity-fullscreen-button");
+            const fullscreenButton = document.querySelector("#unity-fullscreen-button");
             const spinner = document.querySelector('.spinner');
 
             const canFullscreen = (function() {
@@ -78,12 +78,12 @@
                 }).then((unityInstance) => {
                   loadingCover.style.display = "none";
                   if (canFullscreen) {
-                    // if (!hideFullScreenButton) {
-                    //   fullscreenButton.style.display = "";
-                    // }
-                    // fullscreenButton.onclick = () => {
-                    //   unityInstance.SetFullscreen(1);
-                    // };
+                    if (!hideFullScreenButton) {
+                      fullscreenButton.style.display = "";
+                    }
+                    fullscreenButton.onclick = () => {
+                      unityInstance.SetFullscreen(1);
+                    };
                   }
                 }).catch((message) => {
                   alert(message);
