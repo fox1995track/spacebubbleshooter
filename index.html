@@ -16,10 +16,14 @@
       <canvas id="unity-canvas"></canvas>
     </div>
     <div id="loading-cover" style="display: none">
+      <div id="unity-loading-scene">
+        <img id="smplio-logo" src="./TemplateData/Loading sphere.png" alt="logo image">
+      </div>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty" style="display: none">
-          <div id="unity-progress-bar-full"></div>
+          <div id="unity-progress-bar-full">
+          </div>
         </div>
         <div class="spinner"></div>
       </div>
@@ -46,6 +50,7 @@
             const progressBarFull = document.querySelector("#unity-progress-bar-full");
             const fullscreenButton = document.querySelector("#unity-fullscreen-button");
             const spinner = document.querySelector('.spinner');
+            const unityLoadingScene = document.querySelector('#unity-loading-scene');
 
             const canFullscreen = (function() {
               for (const key of [
@@ -73,8 +78,7 @@
               import('./lib/thirdweb-unity-bridge.js').then(module => {
                 createUnityInstance(canvas, config, (progress) => {
                   spinner.style.display = "none";
-                  // progressBarEmpty.style.display = "";
-                  // progressBarFull.style.width = `${100 * progress}%`;
+                  unityLoadingScene.style.display = "flex";
                 }).then((unityInstance) => {
                   loadingCover.style.display = "none";
                   if (canFullscreen) {
