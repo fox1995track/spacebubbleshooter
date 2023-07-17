@@ -73,8 +73,8 @@
               import('./lib/thirdweb-unity-bridge.js').then(module => {
                 createUnityInstance(canvas, config, (progress) => {
                   spinner.style.display = "none";
-                  progressBarEmpty.style.display = "";
-                  progressBarFull.style.width = `${100 * progress}%`;
+                  // progressBarEmpty.style.display = "";
+                  // progressBarFull.style.width = `${100 * progress}%`;
                 }).then((unityInstance) => {
                   loadingCover.style.display = "none";
                   if (canFullscreen) {
