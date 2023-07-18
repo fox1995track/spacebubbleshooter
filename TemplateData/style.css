@@ -13,6 +13,18 @@ canvas {
 body {
     margin: 0;
 }
+
+
+.load_page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../TemplateData/background.png");
+  background-size: cover;
+}
+
 #unity-container {
     width: 100%;
     height: 100%;
@@ -20,7 +32,7 @@ body {
 #unity-canvas {
     width: 100%;
     height: 100%;
-    background: #231F20;
+    background: rgb(12,35,55);
 }
 #loading-cover {
     position: absolute;
@@ -93,29 +105,6 @@ body {
   transform: translateZ(0);
   animation: spinner-spin 1.1s infinite linear;
 }
-
-#unity-loading-scene{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    background-image: url("./background.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-#smplio-logo{
-    display: flex;
-    margin: auto;
-    z-index: 1;
-    width: 50%;    
-    max-width: 150px;
-    animation: zoom-logo 2s infinite ease-in-out;
-}
-
 @keyframes spinner-spin {
   0% {
     transform: rotate(0deg);
@@ -125,15 +114,112 @@ body {
   }
 }
 
-@keyframes zoom-logo {
-    0% {
-      transform: scale(1, 1);
+.loader {
+    width: 160px;
+    height: 160px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    /* overflow: hidden; */
+    /* box-shadow: 0 0 5px #444; */
+    &:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: linear-gradient(rgb(55,255,198), rgb(12,35,55) 60%);
+      animation: spin 1.5s infinite linear;
     }
-    50% {
-      transform: scale(1.18, 1.18);
-    }
-    100% {
-      transform: scale(1, 1);
+    &:after {
+      content: "";
+      position: absolute;
+      width: 95%;
+      height: 95%;
+      top: 2.5%;
+      left: 2.5%;
+      background-color: rgb(12,35,55);
+      /* opacity: 0.5; */
+      border-radius: 50%;
+      box-shadow: inset 0 0 5px rgb(12,35,55);
     }
   }
+  
+  @keyframes spin {
+    0% {
+        transform: rotate(0deg);
+      }
+    100% {
+        transform: rotate(360deg);
+      }
+  }
 
+  .contain {
+    position: relative;
+    left: -80px;
+  }
+
+  .box1 {
+    position: absolute;
+    background-image:  url("../TemplateData/Loading_sphere.png");
+    background-repeat: no-repeat;
+    background-size: 150px 150px;
+    width: 150px;
+    height: 150px;
+    margin: 5px;
+    z-index: 10;
+    top: 5px;
+    opacity: 0;
+    animation: miss 3s 1 linear;
+    animation-delay: 2.5;
+  }
+
+  @keyframes miss {
+    0% {
+        opacity: 1;
+    }
+    85% {
+        opacity: 1;
+      }
+    100% {
+        opacity: 0;
+      }
+  }
+
+  .box2 {
+    position: absolute;
+    background-image:  url("../TemplateData/Property_1_Default.png");
+    background-repeat: no-repeat;
+    background-size: 140px 140px;
+    width: 140px;
+    height: 140px;
+    margin: 10px;
+    left: 1px;
+    z-index: 5;
+    animation: spin2 3s 1 linear;
+  }
+
+  @keyframes spin2 {
+    0% {
+        transform: rotate(180deg);
+    }
+    85% {
+        transform: rotate(180deg);
+      }
+    100% {
+        transform: rotate(360deg);
+      }
+  }
+
+  .letter {
+    position: absolute;
+    top: 210px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+  }
