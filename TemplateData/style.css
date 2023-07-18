@@ -13,18 +13,6 @@ canvas {
 body {
     margin: 0;
 }
-
-
-.load_page {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-image: url("../TemplateData/background.png");
-  background-size: cover;
-}
-
 #unity-container {
     width: 100%;
     height: 100%;
@@ -32,7 +20,7 @@ body {
 #unity-canvas {
     width: 100%;
     height: 100%;
-    background: rgb(12,35,55);
+    background: #231F20;
 }
 #loading-cover {
     position: absolute;
@@ -112,6 +100,16 @@ body {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.load_page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../TemplateData/background.png");
+    background-size: cover;
 }
 
 .loader {
