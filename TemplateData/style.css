@@ -92,12 +92,15 @@ body {
   border-left: 1.1em solid #ffffff;
   transform: translateZ(0);
   animation: spinner-spin 1.1s infinite linear;
+  -webkit-animation: spinner-spin 1.1s infinite linear;
 }
 @keyframes spinner-spin {
   0% {
+    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
   100% {
+    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
@@ -134,6 +137,7 @@ body {
       border-radius: 50%;
       background: linear-gradient(rgb(55,255,198), rgb(12,35,55) 60%);
       animation: spin 1.5s infinite linear;
+      -webkit-animation: spin 1.5s infinite linear;
     }
     &:after {
       content: "";
@@ -152,9 +156,11 @@ body {
   @keyframes spin {
     0% {
         transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
       }
     100% {
         transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
       }
   }
 
@@ -174,8 +180,10 @@ body {
     z-index: 10;
     top: 5px;
     opacity: 0;
-    animation: miss 10s 1 linear;
+    animation: miss 8s 1 linear;
+    -webkit-animation: miss 8s 1 linear;
     animation-delay: 2.5;
+    -webkit-animation-delay: 2.5;
   }
 
   @keyframes miss {
@@ -201,17 +209,21 @@ body {
     left: 1px;
     z-index: 5;
     animation: spin2 3s 1 linear;
+    -webkit-animation: spin2 3s 1 linear;
   }
 
   @keyframes spin2 {
     0% {
         transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
     }
     85% {
         transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
       }
     100% {
         transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
       }
   }
 
