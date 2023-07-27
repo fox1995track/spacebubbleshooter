@@ -177,8 +177,8 @@ body {
     z-index: 10;
     top: 5px;
     opacity: 0;
-    animation: miss 8s 1 linear;
-    -webkit-animation: miss 8s 1 linear;
+    animation: miss 5s 1 linear;
+    -webkit-animation: miss 5s 1 linear;
     animation-delay: 2.5;
     -webkit-animation-delay: 2.5;
   }
